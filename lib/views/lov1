@@ -1,0 +1,92 @@
+ /* 
+ Widget build(BuildContext context) {
+ return Scaffold(
+   backgroundColor: Colors.blue,
+   body: SingleChildScrollView(
+     child: SafeArea(
+       child: ClipRRect(
+         borderRadius: BorderRadius.only(
+           topLeft: Radius.circular(20),
+           topRight: Radius.circular(20),
+         ),
+         child: Container(
+           color: Colors.white.withOpacity(0.5),
+           padding: const EdgeInsets.all(20.0),
+           child: Column(
+             crossAxisAlignment: CrossAxisAlignment.start,
+             children: [
+               // El resto de tu código va aquí...
+             ],
+           ),
+         ),
+       ),
+     ),
+   ),
+ );
+}
+
+ */
+ 
+ 
+ Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: SafeArea(
+            child: Container(
+          //color: Colors.green, //delete this line
+          width: double.infinity,
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start, //
+            children: [
+              const SizedBox(height: 20),
+              Container(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 200,
+                  height: 130,
+                ), /* const Text(
+                  'Logo',
+                  textAlign: TextAlign.center, //
+                  style: TextStyle(
+                      color: GlobalColors.textColor,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold),
+                ), */
+              ),
+              const SizedBox(height: 50),
+              const Text(
+                'Ingrese a su cuenta',
+                textAlign: TextAlign.center, //
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(height: 12),
+              //email Input
+              TextFormGlobal(
+                  controller: emailController,
+                  text: 'Email Address',
+                  textInputType: TextInputType.emailAddress,
+                  obscureText: false),
+              const SizedBox(
+                height: 10,
+              ),
+              TextFormGlobal(
+                  controller: passwordController,
+                  text: 'Password',
+                  textInputType: TextInputType.text,
+                  obscureText: true),
+              const SizedBox(height: 10),
+              const ButtonGolbal(
+                color: GlobalColors.mainColor,
+                btnText: 'Iniciar Sesion',
+              ),
+            ],
+          ), //
+        )),
+      ),
+    );
+  }
